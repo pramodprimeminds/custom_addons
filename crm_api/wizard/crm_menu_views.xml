@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_search_live_calls" model="ir.ui.view">
+        <field name="name">live.calls.wizard.form</field>
+        <field name="model">live.calls.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Search Live Calls">
+                <group>
+                    <field name="customer_number"/>
+                    <field name="customer_name"/>
+                </group>
+                <footer>
+                    <button name="search_live_calls_new" string="search Live Calls" type="object"
+                            class="btn btn-sm btn-primary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_live_calls_wizard" model="ir.actions.act_window">
+        <field name="name"> Search Live Calls</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">live.calls.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_search_live_calls"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_search_live_calls" model="ir.actions.act_window">
+        <field name="name">Live Calls</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">tree,form,kanban,calendar,graph,pivot</field>
+        <field name="help" type="html">
+            <p>
+            </p>
+
+        </field>
+    </record>
+
+    <menuitem
+            id="live_calls_search"
+            name="Live Calls"
+            parent="crm.crm_menu_root"
+            action="action_live_calls_wizard"
+            sequence="20"/>
+
+</odoo>

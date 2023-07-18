@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_menu_agent_invoice" name="Portal layout : agent invoices"
+              inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'invoice'" t-attf-class="breadcrumb-item #{'active ' if not invoices_dict else ''}">
+                <a t-if="invoices_dict" t-attf-href="'/agents_invoice'">Agent Invoice</a>
+                <t t-else="">Agent Invoice</t>
+            </li>
+        </xpath>
+    </template>
+
+
+    <template id="portal_my_home_agent_invoice" name="Agent Invoice" customize_show="True"
+              inherit_id="portal.portal_my_home">
+
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Agent Invoice</t>
+                <t t-set="url" t-value="'/agents_invoice'"/>
+                <t t-set="placeholder_count" t-value="'age_invoice_count'"/>
+
+            </t>
+        </xpath>
+    </template>
+
+
+    <!--    <record id="website_menu_agent_invoice" model="website.menu">-->
+    <!--        <field name="name">Agent Invoices</field>-->
+    <!--        <field name="url" eval="'/agents_invoice'"/>-->
+    <!--        <field name="parent_id" ref="website.main_menu"/>-->
+    <!--        <field name="sequence" type="int">3</field>-->
+    <!--    </record>-->
+
+    <template id="agents_invoice" name="Agent Invoice">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-call="portal.portal_searchbar_sortby">
+                <t t-set="title">Agent Invoice</t>
+            </t>
+            <t t-call="portal.portal_table">
+                <tr class="active">
+                    <th class="text-center">Invoice Number</th>
+                    <th class="text-center">Due Date</th>
+                    <th class="text-center">Total Payment</th>
+                    <th class="text-center">Pending Payment</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center"/>
+                </tr>
+
+                <tr t-foreach="invoices" t-as="invoices_dict">
+                    <td class="text-center">
+                        <t t-esc="invoices_dict['name']"/>
+                    </td>
+                    <td class="text-center">
+                        <t t-esc="invoices_dict['invoice_date_due']"/>
+                    </td>
+
+                    <td class="text-center">
+                        <t t-esc="invoices_dict['amount_total_signed']"/>
+                    </td>
+                    <td class="text-center">
+                        <t t-esc="invoices_dict['amount_residual_signed']"/>
+                    </td>
+
+                    <td class="text-center">
+                        <t t-esc="invoices_dict['state']"/>
+                    </td>
+
+                    <!--                    <td>-->
+                    <!--                        <div class="line">-->
+                    <!--                            <a href="https://www.example.com" target="_blank" class="btn btn-primary">Pay Now</a>-->
+                    <!--                        </div>-->
+                    <!--                    </td>-->
+
+                </tr>
+            </t>
+            <!--            <p t-else="">There are currently no availble Indents.</p>-->
+        </t>
+    </template>
+</odoo>

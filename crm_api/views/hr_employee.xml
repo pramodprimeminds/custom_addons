@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_hr_employee_inherit_form_new" model="ir.ui.view">
+        <field name="name">view_hr_employee_inherit_form_new</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile_phone']" position="after">
+                <field name="mobile_number_new_ids" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='hr_settings']" position="after">
+                <page name="tata_cred" string="Tata Telecommunication Credentials" groups='base.group_system,base.group_erp_manager'>
+                    <group>
+                        <field name="user_name"/>
+                        <field name="password"/>
+                        <field name="tata_telecom_access_token" invisible="True"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+
+

@@ -1,0 +1,184 @@
+<template id="template" xml:space="preserve">
+
+    <t t-name="reta_dashboard">
+        <div class="oh_reta_dashboards" style="margin-top: 20px;">
+            <div class="container-fluid o_reta_main_dashboard"></div>
+        </div>
+    </t>
+
+    <t t-name="reta_dashboard_data">
+
+        <div class="row o_dashboard_reta">
+
+            <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/> -->
+
+            <!-- <link href="https://unpkg.com/bootstrap-table@1.22.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.css" rel="stylesheet"/>-->
+                  
+
+            <script src="https://unpkg.com/bootstrap-table@1.22.0/dist/bootstrap-table.min.js"></script>
+            <script src="https://unpkg.com/bootstrap-table@1.22.0/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+            <div class="container-fluid" style="display:block;">
+                <div class='col-12' style="width:100%">
+                    <div id="welcomenote" class="welcomenote common_margin" > Welcome  <span class='userclass'><t t-esc="widget.user"/></span> </div>
+                    <div style='height:30px; width:100%'>&nbsp;</div>
+                    <div class='row spacer_row'>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class='o-scorecard w-100 h-100 reta_card cio_card'>
+                                <div class="display_cio_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=eenadu_reta.action_reta_cio&amp;menu_id=eenadu_reta.child_reta_application">
+                                    <div>
+                                        <div class="reta_card_title"><strong>CIO</strong></div>
+                                        <div class="reta_card_value"><t t-esc="widget.cio"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card scheduling_card">
+                                <div class="display_scheduling_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=eenadu_reta.action_reta_release_orders&amp;menu_id=eenadu_reta.child_reta_application">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Scheduling</strong></div>
+                                        <div class="reta_card_value"><t t-esc="widget.scheduling"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card waiting_for_approval_card">
+                                <div class="display_waiting_for_approval_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=eenadu_reta.action_reta_release_orders&amp;menu_id=eenadu_reta.child_reta_application">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Waiting for Approval</strong></div>
+                                        <div class="reta_card_value"><t t-esc="widget.waiting_for_approval"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card ro_card">
+                                <div class="display_release_orders_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=eenadu_reta.action_reta_release_orders&amp;menu_id=eenadu_reta.child_reta_application">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Release Orders</strong></div>
+                                        <div class="reta_card_value"><t t-esc="widget.release_orders"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                   </div>
+
+                    <div class="row spacer_row" >
+                           <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card invoice_card">
+                                <div class="display_invoices_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=eenadu_reta.action_reta_view_invoices&amp;menu_id=account.menu_action_move_out_invoice_type">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Invoices</strong></div>
+                                        <div class="reta_card_value"><t t-esc="widget.invoices"/></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card deposit_card">
+                                <div class="display_deposits_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=account.deposit&amp;action=account_deposit.action_reta_deposits&amp;menu_id=account_deposit.child_reta_application_deposite">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Deposits</strong></div>
+                                        <div class="reta_card_sub_value"><span><strong>Deposit Amount: ₹</strong></span>
+                                            <t t-esc="widget.deposit_amt"/>
+                                            </div>
+                                        <div class="reta_card_sub_value"><span><strong>Outstanding: ₹</strong></span>
+                                            <t t-esc="widget.outstanding_amt"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card commission_card">
+                                <div class="display_commission_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=account.deposit&amp;action=commission.action_commission_settlement&amp;menu_id=commission.menu_settlement_reta">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Commissions</strong></div>
+                                        <div class="reta_card_sub_value"><span><strong>Received Payments: ₹</strong></span>
+                                            <t t-esc="widget.total_payment_received"/>
+                                            </div>
+                                        <div class="reta_card_sub_value"><span><strong>Commission: ₹</strong></span>
+                                            <t t-esc="widget.total_commission_received"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3 text-center common_margin'>
+                            <div class="o-scorecard w-100 h-100 reta_card incentive_card">
+                                <div class="display_deposits_div" role="button"
+                                     t-attf-test="web#view_type=list&amp;model=account.deposit&amp;action=account_deposit.action_reta_deposits&amp;menu_id=account_deposit.child_reta_application_deposite">
+                                    <div>
+                                        <div class="reta_card_title"><strong>Deposits</strong></div>
+                                        <div class="reta_card_sub_value"><span><strong>Deposit Amount: ₹</strong></span>
+                                            <t t-esc="widget.deposit_amt"/>
+                                            </div>
+                                        <div class="reta_card_sub_value"><span><strong>Outstanding: ₹</strong></span>
+                                            <t t-esc="widget.outstanding_amt"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div style='height:30px; width:100%'></div>
+                <div class="tableheader_new" style="margin-bottom:2px;">Targets</div>
+                <div class='table-responsive scrollbar-thin' style='max-height:300px;'>
+
+                    <table class='table'>
+                        <thead style="position: sticky;top: 0; background:#20acd4" >
+                            <tr style="font-size:16px;">
+                                <th name="th_product_id" class="headertablefixed" style="color:#FFF"><strong>Product</strong></th>
+                                <th name="th_target_amount" class=" headertablefixed text-center" style="color:#FFF"><strong>Target Amount</strong></th>
+                                <th name="th_achieved_amount" class="headertablefixed text-center" style="color:#FFF"><strong>Achieved Amount</strong></th>
+                                <th name="th_to_be_achieved" class="headertablefixed text-center" style="color:#FFF"><strong>To Be Achieved</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="widget.target_lines" t-as="target_line">
+                                <tr t-att-class='o_line_section'>
+                                    <td style='padding:10px;'>
+                                        <span><t t-esc="target_line.product_id"/></span>
+                                    </td>
+                                    <td class="text-center" style='padding:10px;'>
+                                        <span>₹</span>
+                                        <span><t t-esc="target_line.target_amount"/></span>
+                                    </td>
+                                    <td class="text-center" style='padding:10px;'>
+                                        <span>₹</span>
+                                        <span><t t-esc="target_line.achieved_amount"/></span>
+                                    </td>
+                                    <td class="text-center" style='padding:10px;'>
+                                        <span><t t-esc="target_line.to_be_achieved"/></span>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style='height:30px; width:100%'></div>
+            </div>
+        </div>
+    </t>
+
+</template>

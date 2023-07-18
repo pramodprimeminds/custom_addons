@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+	<record id="scheduling_position_details_form_view" model="ir.ui.view">
+		<field name="name">scheduling.position.details.form</field>
+		<field name="model">scheduling.position.details</field>
+		<field name="arch" type="xml">
+			<form string="Scheduling Position Details">
+				<sheet>
+					<group>
+						<group>
+							<field name = 'product_id' />
+							<field name = 'length' />
+							<field name = 'page'/>
+							<field name = 'publish_date'/>
+						</group>
+						<group>
+							<field name = 'name' />
+							<field name = 'width' />
+							<field name = 'ad_position' />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="scheduling_position_details_tree_view" model="ir.ui.view">
+		<field name="name">scheduling.position.details.tree</field>
+		<field name="model">scheduling.position.details</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name = 'product_id' />
+				<field name = 'name' />
+				<field name = 'length' />
+				<field name = 'width' />
+				<field name = 'page'/>
+				<field name = 'ad_position' />
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_scheduling_position_details_view" model="ir.actions.act_window">
+		<field name="name">Scheduling Position Details</field>
+		<field name="res_model">scheduling.position.details</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+	<!-- <menuitem name="Page" id="menu_newspaper_page_details" parent="sales_person_target.menu_reta_configuration_scheme" action="action_newspaper_page_details_view" sequence="20"/> -->
+
+	
+
+</odoo>

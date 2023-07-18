@@ -1,0 +1,245 @@
+.reta_card{
+	background: #efefef;
+	padding: 10px 5px 10px 5px;
+}
+
+.reta_card_title{
+	font-size: 17px;
+}
+
+.reta_card_value{
+	font-size: 15px;
+}
+
+.reta_card_sub_value{
+	font-size: 15px;
+}
+
+.reta_title_card{
+	background: white;
+}
+
+.cio_card{
+    background: linear-gradient(45deg,#3ba542,#64eb6d);
+	/*background:#3ba54296;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.cio_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#64eb6d,#3ba542);
+}
+
+.scheduling_card{
+    background: linear-gradient(45deg,#b8860b,#f8cd65);
+	/*background:#b8860bb8;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.scheduling_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#f8cd65,#b8860b);
+}
+
+.waiting_for_approval_card{
+    background: linear-gradient(45deg,#f06050,#f58376);
+	/*background:#f14040cc;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.waiting_for_approval_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#f58376,#f06050);
+}
+
+.ro_card{
+    background: linear-gradient(45deg,#705ba5,#a483f8);
+	/*background:#705ba5ad;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.ro_card:hover{
+	box-shadow:5px #7651d2;
+	background: linear-gradient(45deg,#a483f8,#705ba5);
+}
+
+.invoice_card{
+    background: linear-gradient(45deg,#dc8c4d,#edc9ab);
+	/*background:#dc8c4d;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.invoice_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(90deg,#dc8c4d,#edc9ab);
+}
+
+.deposit_card{
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+	/*background:#737feacc;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.deposit_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#73b4ff,#4099ff);
+}
+
+.commission_card{
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+	/*background:#26c6da;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.commission_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#ff869a,#FF5370);
+}
+
+.incentive_card{
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+	/*background:#66bb6a;*/
+	color:#fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+.incentive_card:hover{
+	box-shadow:5px #efefef;
+	background: linear-gradient(45deg,#ffcb80,#FFB64D);
+}
+
+.spacer_row{
+    padding:5px;
+}
+.common_margin{
+    margin-bottom:2px;
+}
+.welcomenote{
+font-size:16px;
+text-align:center;
+}
+.userclass{
+font-size:20px;
+font-weight:bold;
+}
+.tableheader_new{
+font-size:17px;
+font-weight:bold;
+padding:5px;
+border-bottom:1px solid #ccc;
+}
+/*header{
+	background: #FF9900 !important;
+}*/
+
+.headertablefixed {
+   position: sticky;
+   top:0;
+        }
+
+/*table css */
+
+
+.table-dark {
+    --bs-table-bg: #6a8ec5 !important;
+    --bs-table-striped-bg: #6a8ec5 !important;
+    --bs-table-striped-color: #fff;
+    --bs-table-active-bg: #6a8ec5 !important;
+    --bs-table-active-color: #fff;
+    --bs-table-hover-bg: #6a8ec5 !important;
+    --bs-table-hover-color: #fff;
+    color: #fff;
+    border-color: #373b3e;
+}
+
+.spacer_new{
+    height:10px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 5px !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.txt_custom{
+
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    border-radius: 5px !important;
+    padding: 3px !important;
+    height: 33px;
+    font-size: 13px !important;
+    font-weight:100 !important;
+    border-left:none !important;
+    border-right:none !important;
+    border-top:none !important;
+    transition: none;
+
+}
+
+.btn-danger_new {
+    color: #FFF;
+    background-color: none !important;
+    border-color: none !important;
+}
+
+.btn-add_new{
+    color: #FFF;
+    background-color: none !important;
+    border-color: none !important;
+}
+
+
+/* Auto complete dropdown*/
+mark { background-color:pink; }
+
+
+.list-autocomplete {
+  padding:0; }
+.list-autocomplete em {
+  font-style:normal;
+  background-color:#e1f2f9;
+}
+
+.hasNoResults {
+  color:#aaa; }
+.hasNoResults,
+.btn-extra {
+  display:block;
+  padding:10px; }
+
+.hasNoResults {
+  color:#aaa; }
+
+.btn-extra {
+  width:100%;
+  border-top:.5px solid #d2d2d2; }
+
+

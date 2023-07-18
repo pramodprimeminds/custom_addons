@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_crm_lead_inherit_form" model="ir.ui.view">
+        <field name="name">view_crm_lead_inherit_form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="agent_number"/>
+                <field name="mobile_num"/>
+                <button name="make_click_to_call" type="object" string="Call" icon="fa-phone" colspan="2"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

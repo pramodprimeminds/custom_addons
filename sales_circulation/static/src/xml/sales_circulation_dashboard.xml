@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<template>
+   <t t-name="sales_circulation_dashboards">
+       <div class="oh_sales_circulation_dashboards" style="margin-top: 20px;">
+           <div class="container-fluid o_pj_dashboard">
+           </div>
+       </div>
+   </t>
+       <t t-name="sales_circulation_dashboard_data">
+       <div class="row o_dashboard_sales_circulation" style="margin-left: 170px;">
+           <div class="container-fluid" style="display:block;">
+                <div>
+                    <div class="mx-auto h-100 position-relative" style="max-width: 1000px;">
+                        <div class="o-grid-overlay overflow-hidden" style="height: 100%;width: 100%">
+                            <div>
+                                <div class="o-figure-container position-absolute pe-none overflow-hidden" style="left: 0px;top: 50px;width: 1200px;height: 500px;" data-id="bottomRightContainer">
+                                    <div class="o-figure-viewport-inverse w-0 h-0 overflow-visible position-absolute" style="left: 0px;top: 0px;">
+                                        <div class="o-figure-wrapper pe-auto" style="left: 0px;top: 0px;width: 200px;height: 120px;z-index: 10;">
+                                            <div class="o-figure-viewport-inverse w-0 h-0 overflow-visible position-absolute" style="top:30%">
+                                                <div class="o-figure-wrapper pe-auto text-center" style="left: 10px;top: 0px;width: 250px;height: 120px;z-index: 10;position: absolute;">
+                                                    <div class="o-figure w-100 h-100" tabindex="0" style="">
+                                                        <div class="o-chart-container w-100 h-100 display_cio_div" role="button" t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=sales_circulation.action_agent_indent&amp;menu_id=sales_circulation.regions_main">
+                                                            <div class="o-scorecard w-100 h-100" style="padding:4px;background:#3ba542;">
+                                                                <div class="o-title-text" style="font-size: 25px;display: inline-block;color: #ffffff;"><strong>Indent</strong></div>
+                                                                <div class="o-scorecard-content" style="height:90.4px;">
+                                                                    <span style="font-size:30px;display: inline-block;color: #ffffff;">Copies :</span>
+                                                                    <div class="o-key-text" style="font-size: 43.446019345238106px;display: inline-block;color: #ffffff;"><t t-esc="widget.total_indent_copies"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="o-figure-border w-100 h-100 position-absolute pe-none" style="border: 0px solid #c9ccd2;">
+                                                    </div>
+                                                </div>
+                                                <div class="o-figure-wrapper pe-auto text-center" style="left: 275px;top: 0px;width: 250px;height: 120px;z-index: 10;position: absolute;">
+                                                    <div class="o-figure w-100 h-100" tabindex="0" style="">
+                                                        <div class="o-chart-container w-100 h-100 display_release_orders_div" role="button" t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=sales_circulation.action_agent_returns&amp;menu_id=sales_circulation.contact_reports_submenu">
+                                                            <div class="o-scorecard w-100 h-100" style="padding:4px;background:#705ba5;">
+                                                                <div class="o-title-text" style="font-size: 25px;display: inline-block;color: #ffffff;"><strong>Returns</strong></div>
+                                                                <div class="o-scorecard-content" style="height:90.4px;">
+                                                                    <span style="font-size:30px;display: inline-block;color: #ffffff;">Copies :</span>
+                                                                    <div class="o-key-text" style="font-size: 38.38542596726192px;display: inline-block;color: #ffffff;"><t t-esc="widget.returns"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="o-figure-wrapper pe-auto text-center" style="left: 540px;top: 0px;width: 250px;height: 120px;z-index: 10;position: absolute;">
+                                                    <div class="o-figure w-100 h-100" tabindex="0" style="">
+                                                        <div class="o-chart-container w-100 h-100 display_invoices_div" role="button" t-attf-test="web#view_type=list&amp;model=sale.order&amp;action=sales_circulation.action_sales_circulation_view_invoices&amp;menu_id=account.menu_action_move_out_invoice_type">
+                                                            <div class="o-scorecard w-100 h-100" style="padding:4px;background:#dc8c4d;">
+                                                                <div class="o-title-text" style="font-size: 25px;display: inline-block;color: #ffffff;"><strong>Invoices</strong></div><br/>
+                                                                <div class="o-scorecard-content" style="height:90.4px;">
+                                                                    <div class="o-key-text" style="font-size:20px;display: inline-block;color: #ffffff;"><span><strong>Total: ₹</strong></span><t t-esc="widget.total_amount_inv"/>
+                                                                    </div>
+                                                                    <div class="o-key-text" style="font-size:20px;display: inline-block;color: #ffffff;"><span><strong>Total Due: ₹</strong></span><t t-esc="widget.total_due_amount"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="o-figure-border w-100 h-100 position-absolute pe-none" style="border: 0px solid #c9ccd2;">
+                                                    </div>
+                                                </div>
+                                                <div class="o-figure-wrapper pe-auto text-center" style="left: 805px;top: 0px;width: 250px;height: 120px;z-index: 10;position: absolute;">
+                                                    <div class="o-figure w-100 h-100" tabindex="0" style="">
+                                                        <div class="o-chart-container w-100 h-100 display_deposits_div" role="button" t-attf-test="web#view_type=list&amp;model=account.deposit&amp;action=account_deposit.action_agent_deposit&amp;menu_id=account_deposit.circulation_order_main_menu">
+                                                            <div class="o-scorecard w-100 h-100" style="padding:4px;background:#676b8c;">
+                                                                <div class="o-title-text" style="font-size: 25px;display: inline-block;color: #ffffff;"><strong>Deposits</strong></div>
+                                                                <div class="o-scorecard-content" style="height:90.4px;">
+                                                                    <div class="o-key-text" style="font-size:20px;display: inline-block;color: #ffffff;"><span><strong>Deposit Amount: ₹</strong></span><t t-esc="widget.deposit_amt"/>
+                                                                    </div>
+                                                                    <div class="o-key-text" style="font-size:20px;display: inline-block;color: #ffffff;"><span><strong>Outstanding: ₹</strong></span><t t-esc="widget.outstanding_amt"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="o-figure-border w-100 h-100 position-absolute pe-none" style="border: 0px solid #c9ccd2;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="max-height:500px; overflow-y: scroll;">
+                                        <h1 class="position-absolute" style="top:150px;"><strong><i>Indent</i></strong></h1>
+                                        <table class="indent_line_table table table-sm mt-4 position-absolute" style="top:175px; width:90%; height:400px;">
+                                            <thead style="display: table-row-group">
+                                                <tr style="font-size:16px;">
+                                                    <th name="th_product_id"><strong><i>Product</i></strong></th>
+                                                    <th name="th_target_amount" class="text-center"><strong><i>NewsPaper Date</i></strong></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-foreach="widget.indent_lines" t-as="indent_lines">
+                                                    <tr t-att-class="'bg-200 fw-bold o_line_section'">
+                                                        <td style='padding:10px;'>
+                                                            <span><t t-esc="indent_lines.product_template_id"/></span>
+                                                        </td>
+                                                        <td class="text-center" style='padding:10px;'>
+                                                            <span>₹</span>
+                                                            <span><t t-esc="indent_lines.newspaper_date"/></span>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+   </t>
+</template>

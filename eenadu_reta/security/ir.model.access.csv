@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_advertisement_content_line_sale_order,advertisement.content.line,model_advertisement_content_line,sales_team.group_sale_salesman,1,1,1,1
+access_scheduling_lines_sale_order,scheduling.lines,model_scheduling_lines,sales_team.group_sale_salesman,1,1,1,1
+access_advertisement_position_sale_order,advertisement.position,model_advertisement_position,sales_team.group_sale_salesman,1,1,1,1
+access_change_reject_scheduling_line_sale_order,change.reject.scheduling.line,model_change_reject_scheduling_line,sales_team.group_sale_salesman,1,1,1,1
+access_sale_related_documents_sale_order,sale.related.documents,model_sale_related_documents,sales_team.group_sale_salesman,1,1,1,1
+access_sale_document_type_sale_order,sale.document.type,model_sale_document_type,sales_team.group_sale_salesman,1,1,1,1
+access_create_quotation_payment_sale_order,create.quotation.payment,model_create_quotation_payment,sales_team.group_sale_salesman,1,1,1,1
+,,,,,,,
+access_newspaper_page_details_sale_order,newspaper.page.details,model_newspaper_page_details,sales_team.group_sale_salesman,1,1,1,1
+access_scheduling_position_details_sale_order,scheduling.position.details,model_scheduling_position_details,sales_team.group_sale_salesman,1,1,1,1

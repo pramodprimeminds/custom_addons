@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="website_menu_available_rides" model="website.menu">
+        <field name="name">CIO</field>
+        <field name="url" eval="'/reta/cio'"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">1</field>
+    </record>
+
+
+    <template id="website_cio_form" name="CIO Form">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <div class="container">
+                    <div class="row">
+                        <div class="header">
+                            <h2 class="text-muted">CIO FORM</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="customer">Customer Name :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control s_website_form_input" name="customer_names">
+                                            <option value="">Select an option</option>
+                                            <t t-foreach="customer_names or []" t-as="customer_name">
+                                                <option t-att-value="customer_name_id">
+                                                    <t t-esc="customer_name.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="agent">Agent Name :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input class="form-control s_website_form_input" type="text" id="agent"
+                                               name="agent_name"/>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="scheduling_date">Publish Type :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input class="form-control s_website_form_input" type="text"
+                                               id="scheduling_date" name="scheduling_date"/>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="gst_treatment">GST Treatment :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select name="gst_treatment" class="form-control s_website_form_input">
+                                            <option value="specific">Specific Date</option>
+                                            <option value="multiple">Multiple Date</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="template_id" class="control-label">Quotation Template :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control s_website_form_input" name="quotation_template">
+                                            <t t-foreach="quotation_template or []" t-as="quotation_temp">
+                                                <option t-att-value="quotation_temp_id">
+                                                    <t t-esc="quotation_temp.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="validity_date">Expiration :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input class="form-control s_website_form_input" type="date" id="validity_date"
+                                               name="validity_date"/>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="date_order">Quotation Date :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input class="form-control s_website_form_input" type="date" id="date_order"
+                                               name="date_order"/>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="pricelist" class="control-label">Pricelist :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control s_website_form_input" name="pricelist">
+                                            <t t-foreach="pricelist or []" t-as="pricelists">
+                                                <option t-att-value="pricelist_id">
+                                                    <t t-esc="pricelists.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="spacer_new"></div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label for="payment_term_id" class="control-label">Payment Terms :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control s_website_form_input link-style" name="pricelist">
+                                            <t t-foreach="payment_terms or []" t-as="payment_terms">
+                                                <option t-att-value="payment_terms_id">
+                                                    <t t-esc="payment_terms.name"/>
+                                                </option>
+                                            </t>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="spacer_new"></div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="cio_paid_amount">Amount Paid :</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="form-control s_website_form_input" type="text"
+                                           id="cio_paid_amount" name="cio_paid_amount"/>
+                                </div>
+                            </div>
+                            <div class="spacer_new"></div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="cio_amount_dio">Amount Due :</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input class="form-control s_website_form_input" type="text" id="cio_amount_dio"
+                                           name="cio_amount_dio"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="height:20px;"></div>
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active" id="nav-reta-order-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-reta-order" type="button" role="tab"
+                                        aria-controls="nav-reta-order" aria-selected="true">Reta Order Lines
+                                </button>
+                                <button class="nav-link" id="nav-optional-products-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-optional-products" type="button" role="tab"
+                                        aria-controls="nav-optional-products" aria-selected="false">Optional
+                                    Products
+                                </button>
+                                <button class="nav-link" id="nav-scheduling-details-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-scheduling-details" type="button" role="tab"
+                                        aria-controls="nav-scheduling-details" aria-selected="false">Scheduling
+                                    Details
+                                </button>
+                                <button class="nav-link" id="nav-related_documents-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-related-documents" type="button" role="tab"
+                                        aria-controls="nav-related-documents" aria-selected="false">Related
+                                    Documents
+                                </button>
+                                <button class="nav-link" id="nav-other-info-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-other-info" type="button" role="tab"
+                                        aria-controls="nav-other-info" aria-selected="false">Other Info
+                                </button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-reta-order" role="tabpanel"
+                                 aria-labelledby="nav-reta-order-tab">
+                                <div class="container py-1">
+                                    <div class="row">
+                                        <div class="col-lg-12 mx-auto">
+                                            <div class="card rounded-0 border-0 shadow">
+                                                <div class="card-body p-5">
+
+                                                    <!--  Bootstrap table-->
+                                                    <link rel="stylesheet" type="text/css"
+                                                          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
+                                                    <script type="text/javascript"
+                                                            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                                                    <script type="text/javascript"
+                                                            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+                                                    <link rel="stylesheet" type="text/css"
+                                                          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                                                    <script></script>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">ProductVariants</th>
+                                                                    <th scope="col">Product</th>
+                                                                    <th scope="col">Description</th>
+                                                                    <th scope="col">Length</th>
+                                                                    <th scope="col">Width</th>
+                                                                    <th scope="col">Quantity</th>
+                                                                    <th scope="col">Uom</th>
+                                                                    <th scope="col">PageNo</th>
+                                                                    <th scope="col">Position</th>
+                                                                    <th scope="col">UnitPrice</th>
+                                                                    <th scope="col">Taxes</th>
+                                                                    <th scope="col">Disc%</th>
+                                                                    <th scope="col">Subtotal</th>
+                                                                    <th scope="col"></th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+
+                                                    <!-- Add rows button-->
+                                                    <a class="col-lg-1 btn btn-primary rounded-0 btn-block"
+                                                       id="insertRow"
+                                                       href="#">Add row
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-optional-products" role="tabpanel"
+                                 aria-labelledby="nav-optional-products-tab">...
+                            </div>
+                            <div class="tab-pane fade" id="nav-scheduling-details" role="tabpanel"
+                                 aria-labelledby="nav-scheduling-details-tab">...
+                            </div>
+                            <div class="tab-pane fade" id="nav-related-documents" role="tabpanel"
+                                 aria-labelledby="nav-related-documents-tab">...
+                            </div>
+                            <div class="tab-pane fade" id="nav-other-info" role="tabpanel"
+                                 aria-labelledby="nav-other-info-tab">...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--            <div data-name="Submit Button">-->
+        <!--                <div/>-->
+        <!--                <button type="submit" class="btn btn-primary">Submit</button>-->
+        <!--            </div>-->
+    </t>
+</template>
+        </odoo>
+
